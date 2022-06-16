@@ -8,13 +8,17 @@
     "dependencies": {
         "@sap/cds": "^5",
         "express": "^4",
-        "hdb": "^0.18.3"
+        "hdb": "^0.18.3",
+        "passport": "^0.6.0"
     },
     "devDependencies": {
+        "@sap/ux-specification": "^1.100.4",
         "sqlite3": "^5.0.2"
     },
     "scripts": {
-        "start": "cds run"
+        "start": "cds run",
+        "watch-catalog": "cds watch --open catalog/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy samplecapapp --delete-services --delete-service-keys"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",
@@ -50,5 +54,8 @@
         "hana": {
             "deploy-format": "hdbtable"
         }
-    }
+    },
+    "sapux": [
+        "app/catalog"
+    ]
 }
